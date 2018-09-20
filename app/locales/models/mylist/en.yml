@@ -1,0 +1,8 @@
+en:
+  activerecord:
+    models:
+      mylist: "Mylist"
+    attributes:
+      mylist:
+        id: "ID"
+        niconico_mylist_id: "NiconicoMylistId"
