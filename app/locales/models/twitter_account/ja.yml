@@ -1,0 +1,11 @@
+ja:
+  activerecord:
+    models:
+      twitter_account: "TwitterAccount"
+    attributes:
+      twitter_account:
+        id: "ID"
+        twitter_user_id: "TwitterUserId"
+        access_token: "AccessToken"
+        access_secret: "AccessSecret"
+        authenticated: "Authenticated"
