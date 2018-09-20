@@ -5,4 +5,6 @@ class TwitterAccount < ApplicationRecord
   has_many :twitter_account_mylists
 
   validates :twitter_user_id, presence: true, uniqueness: true
+  validates :access_token, :access_secret, presence: true
+  validates :authenticated, inclusion: { in: [true, false] }
 end
