@@ -91,6 +91,10 @@ GEM
     factory_bot_rails (4.11.1)
       factory_bot (~> 4.11.1)
       railties (>= 3.0.0)
+    faraday (0.15.3)
+      multipart-post (>= 1.2, < 3)
+    faraday-encoding (0.0.5)
+      faraday
     ffaker (2.10.0)
     ffi (1.9.25)
     formatador (0.2.5)
@@ -158,8 +162,12 @@ GEM
     minitest (5.11.3)
     msgpack (1.2.4)
     multi_json (1.13.1)
+    multipart-post (2.0.0)
     mysql2 (0.5.2)
     nenv (0.3.0)
+    niconico-mylist (0.2.1)
+      faraday
+      faraday-encoding
     nio4r (2.3.1)
     nokogiri (1.8.4)
       mini_portile2 (~> 2.3.0)
@@ -370,6 +378,7 @@ DEPENDENCIES
   locale_kit
   meta-tags
   mysql2 (>= 0.4.4, < 0.6.0)
+  niconico-mylist
   omniauth
   parser (~> 2.5.1.x)
   premailer-rails
