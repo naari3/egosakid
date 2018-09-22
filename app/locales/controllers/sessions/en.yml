@@ -1,0 +1,4 @@
+en:
+  sessions:
+    create:
+      key: "value"
