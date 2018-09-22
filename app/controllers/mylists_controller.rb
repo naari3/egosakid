@@ -10,7 +10,7 @@ class MylistsController < ApplicationController
   end
 
   def create
-    @mylist = Mylist.new(post_params)
+    @mylist = Mylist.new(create_params)
 
     if @mylist.save
       redirect_to mylist_index_path
@@ -21,7 +21,7 @@ class MylistsController < ApplicationController
 
   private
 
-  def post_params
-    
+  def create_params
+    params.require(:mylist).permit(:niconico_mylist_id)
   end
 end

@@ -1,4 +1,4 @@
-- @media.errors.full_messages.each do |msg|
+- @mylist.errors.full_messages.each do |msg|
   ul.list
     li
       = msg
@@ -6,8 +6,8 @@
 = form_for @mylist, multipart: true, url: { action: 'create' } do |m|
   div
     p
-      = f.label :niconico_mylist_id, 'マイリストID'
+      = m.label :niconico_mylist_id, 'マイリストID'
     p
-      = f.number_field :url, placeholder: 'IDを入力'
+      = m.number_field :niconico_mylist_id, placeholder: 'IDを入力'
     p
       = m.submit '保存'
