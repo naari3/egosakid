@@ -1,0 +1,20 @@
+h1= @mylist.niconico_mylist.title
+p
+  span= @mylist.niconico_mylist.creator
+p
+  span= @mylist.niconico_mylist.description
+p
+  span= @mylist.niconico_mylist.last_build_date
+
+span= "#{@mylist.niconico_mylist.items.count}件"
+table
+  thead
+    tr
+      th title
+      th description
+  tbody
+    - @mylist.niconico_mylist.items.each do |item|
+      tr
+        td= link_to(item.title, item.link)
+        td
+          == item.description
