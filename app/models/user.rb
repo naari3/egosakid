@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class User < ApplicationRecord
+  has_many :user_mylists
+  has_many :mylists, through: :user_mylists
   belongs_to :twitter_account
 
   validates :twitter_account_id, presence: true, uniqueness: true

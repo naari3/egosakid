@@ -1,9 +1,0 @@
-en:
-  activerecord:
-    models:
-      twitter_account_mylist: "TwitterAccountMylist"
-    attributes:
-      twitter_account_mylist:
-        id: "ID"
-        twitter_account: "TwitterAccount"
-        mylist: "Mylist"

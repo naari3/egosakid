@@ -1,0 +1,9 @@
+en:
+  activerecord:
+    models:
+      user_mylist: "UserMylist"
+    attributes:
+      user_mylist:
+        id: "ID"
+        user: "User"
+        mylist: "Mylist"
