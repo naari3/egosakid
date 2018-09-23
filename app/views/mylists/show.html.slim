@@ -1,19 +1,33 @@
 h1= @mylist.niconico_mylist.title
-p
-  span= @mylist.niconico_mylist.creator
-p
-  span= @mylist.niconico_mylist.description
-p
-  span= @mylist.niconico_mylist.last_build_date
 
-span= "#{@mylist.niconico_mylist.items.count}件"
+== link_to('マイリスト一覧', mylists_path)
+
+= form_with method: :get, url: mylist_path(@mylist.niconico_mylist_id) do |f|
+  div
+    = f.label :title, 'タイトルで検索'
+    = f.text_field :title, placeholder: 'タイトル'
+    div
+      = f.submit '検索'
+table
+  thead
+    tr
+      th 製作者
+      th 説明
+      th 最終更新日
+  tbody
+    tr
+      td= @mylist.niconico_mylist.creator
+      td= @mylist.niconico_mylist.description
+      td= @mylist.niconico_mylist.last_build_date
+
+p= "#{@mylist.niconico_mylist.items.count}件"
 table
   thead
     tr
       th title
       th description
   tbody
-    - @mylist.niconico_mylist.items.each do |item|
+    - @items.each do |item|
       tr
         td= link_to(item.title, item.link)
         td

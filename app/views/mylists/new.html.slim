@@ -3,7 +3,7 @@
     li
       = msg
 
-= form_for @mylist, multipart: true, url: { action: 'create' } do |m|
+= form_for @mylist, url: { action: 'create' } do |m|
   div
     p
       = m.label :niconico_mylist_id, 'マイリストID'

@@ -2,4 +2,5 @@ h1 Home#index
 p= link_to('Twitterでログイン', '/auth/twitter') unless current_user
 
 - if current_user
+  == link_to('マイリスト登録はこちら', new_mylist_path)
   - current_user.mylists.map(&:niconico_mylist)
