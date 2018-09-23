@@ -8,7 +8,7 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-module Egosakid
+module Lazylist
   class Application < Rails::Application
     config.generators do |generator|
       generator.helper false

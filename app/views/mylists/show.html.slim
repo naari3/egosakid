@@ -12,9 +12,14 @@ table
     tr
       th title
       th description
+      th tweets
   tbody
-    - @mylist.niconico_mylist.items.each do |item|
+    - @mylist.niconico_mylist.items[0..10].each do |item|
       tr
         td= link_to(item.title, item.link)
         td
           == item.description
+        td
+          - current_user.twitter_account.search_sm_tweet(item.link.match(%r{[sn]m\d+})[0]).take(100).each do |t|
+            p= t.text
+

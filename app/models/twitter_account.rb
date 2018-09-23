@@ -23,12 +23,16 @@ class TwitterAccount < ApplicationRecord
            authenticated: true)
   end
 
+  def search_sm_tweet(id)
+    twitter_client.search("##{id} -RT")
+  end
+
   private
 
   def twitter_client
     @twitter_client ||= Twitter::REST::Client.new do |config|
       config.consumer_key        = ENV['TWITTER_CONSUMER_KEY']
-      config.consumer_secret     = ENV['TWITTER_CONSUMER_SECRET']
+      config.consumer_secret     = ENV['TWITTER_CONSUMER_SECRET_KEY']
       config.access_token        = access_token
       config.access_token_secret = access_secret
     end

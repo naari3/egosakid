@@ -23,6 +23,7 @@ gem 'sitemap_generator'
 gem 'slim-rails'
 gem 'turbolinks', '~> 5'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
+gem 'twitter'
 gem 'uglifier', '>= 1.3.0'
 
 group :development do
