@@ -1,6 +1,7 @@
 h1 マイリストをタイトルで検索するやつ
 p= link_to('Twitterでログイン', '/auth/twitter') unless current_user
-
+- if flash[:alert]
+  p= flash[:alert]
 - if current_user
   == link_to('マイリスト登録はこちら', new_mylist_path)
   table

@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class MylistsController < ApplicationController
+  include SessionConcern
+
   def index
     @mylists = current_user.mylists
   end
