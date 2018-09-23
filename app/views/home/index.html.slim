@@ -1,6 +1,18 @@
-h1 Home#index
+h1 マイリストをタイトルで検索するやつ
 p= link_to('Twitterでログイン', '/auth/twitter') unless current_user
 
 - if current_user
   == link_to('マイリスト登録はこちら', new_mylist_path)
-  - current_user.mylists.map(&:niconico_mylist)
+  table
+    thead
+      tr
+        th title
+        th creator
+        th description
+    - @mylists.each do |mylist|
+      tbody
+          tr
+            td= link_to(mylist.niconico_mylist.title, mylist_path(mylist.niconico_mylist_id))
+            td= mylist.niconico_mylist.creator
+            td
+              == mylist.niconico_mylist.description
