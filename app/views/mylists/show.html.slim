@@ -13,7 +13,7 @@ table
       th title
       th description
   tbody
-    - @mylist.niconico_mylist.items[0..10].each do |item|
+    - @mylist.niconico_mylist.items.each do |item|
       tr
         td= link_to(item.title, item.link)
         td

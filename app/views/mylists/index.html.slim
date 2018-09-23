@@ -5,10 +5,12 @@ table
   thead
     tr
       th title
+      th creator
       th description
   - @mylists.each do |mylist|
     tbody
         tr
           td= link_to(mylist.niconico_mylist.title, mylist_path(mylist.niconico_mylist_id))
+          td= mylist.niconico_mylist.creator
           td
             == mylist.niconico_mylist.description
