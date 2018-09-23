@@ -23,10 +23,6 @@ class TwitterAccount < ApplicationRecord
            authenticated: true)
   end
 
-  def search_sm_tweet(id)
-    twitter_client.search("##{id} -RT")
-  end
-
   private
 
   def twitter_client

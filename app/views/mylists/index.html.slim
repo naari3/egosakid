@@ -1,0 +1,14 @@
+== link_to('登録', new_mylist_path)
+- if @mylists.empty?
+  p 登録されていません
+table
+  thead
+    tr
+      th title
+      th description
+  - @mylists.each do |mylist|
+    tbody
+        tr
+          td= link_to(mylist.niconico_mylist.title, mylist_path(mylist.niconico_mylist_id))
+          td
+            == mylist.niconico_mylist.description
