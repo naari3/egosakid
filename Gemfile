@@ -6,6 +6,7 @@ ruby '2.5.1'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'canonical-rails'
 gem 'coffee-rails', '~> 4.2'
+gem 'dalli'
 gem 'jbuilder', '~> 2.5'
 gem 'locale_kit'
 gem 'meta-tags'

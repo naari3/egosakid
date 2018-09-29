@@ -1,0 +1,10 @@
+### Rails ###
+public/assets/*
+
+## Environment normalisation:
+.bundle
+vendor/bundle
+
+## Env file
+.env
+.env.profile

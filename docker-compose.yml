@@ -1,0 +1,29 @@
+version: '3'
+services:
+  db:
+    image: mysql:5.7
+    environment:
+      MYSQL_DATABASE: lazylist_production
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - ./mysql:/var/lib/mysql
+
+  memcached:
+    image: memcached:1.5.10-alpine
+
+  web:
+    build: .
+    image: naari3/lazylist
+    restart: always
+    environment:
+      DATABASE_URL: mysql2://root:root@db/lazylist_production
+      MEMCACHE_URL: memcached:11211
+      RAILS_SERVE_STATIC_FILES: 'true'
+      RAILS_LOG_TO_STDOUT: 'true'
+    env_file: .env.production
+    command: bash -c "rm -f /app/tmp/pids/server.pid; bundle exec rails s -p 3000 -b '0.0.0.0'"
+    ports:
+      - "127.0.0.1:3000:3000"
+    depends_on:
+      - db
+      - memcached

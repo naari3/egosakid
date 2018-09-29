@@ -29,3 +29,8 @@
 /coverage
 /vendor/bundle
 !.envrc
+
+.env.production
+
+# Docker compose volumes
+mysql/
